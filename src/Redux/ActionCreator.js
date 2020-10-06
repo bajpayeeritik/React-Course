@@ -26,7 +26,7 @@ export const dishesFailed=()=>
 (
     {
         type:ActionTypes.DISHES_FAILED,
-        payload : 'errormess'
+        payload : ErrorMessage
     }
 )
 export const addDishes=(dishes)=>(
