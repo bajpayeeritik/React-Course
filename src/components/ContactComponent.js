@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem,
     Button, Row, Col, Label } from 'reactstrap';
-import { Control,actions, Form, Errors } from 'react-redux-form';
+    import { Control, Form, Errors, actions } from 'react-redux-form';
 
 import { Link } from 'react-router-dom';
 
@@ -139,27 +139,29 @@ class Contact extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Col md={{ size: 6, offset: 2 }}>
-                                    <div className="form-check">
-                                        <Label>
-                                            <Control.checkbox model=".agree" name="agree" className="form-check-input" /> {' '}
-                                            <strong>May we contact you?</strong>
-                                        </Label>
-                                    </div>
+                                <Col md={{size: 6, offset: 2}}>
+                                    <Label check>
+                                        <Control.checkbox model=".agree" 
+                                            name="agree"
+                                            className="form-check-input" /> {' '}
+                                        <strong>May we contact you?</strong>
+                                    </Label>
                                 </Col>
-                                <Col md={{ size: 3, offset: 1 }}>
-                                    <Control.select model=".contactType" name="contactType" className="form-control" >
+                                <Col md={{size: 3, offset: 1}}>
+                                    <Control.select model="contactType" name="contactType"
+                                            className="form-control">
                                         <option>Tel.</option>
                                         <option>Email</option>
                                     </Control.select>
                                 </Col>
                             </Row>
-
                             <Row className="form-group">
-                                <Label htmlFor="feedback" md={2}>Your feedback</Label>
-                                <Col md={10}>
-                                    <Control.textarea model=".message" id="message" name="message" rows="12" className="form-control" />
-                                </Col>
+                                 <Label htmlFor="message" md={2}>Your Feedback</Label>
+                                    <Col md={10}>
+                                        <Control.textarea model=".message" id="message" name="message"
+                                            rows="12"
+                                            className="form-control" />
+                                    </Col>
                             </Row>
                             <Row className="form-group">
                                 <Col md={{size:10, offset: 2}}>
